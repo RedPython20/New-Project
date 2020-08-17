@@ -1,9 +1,28 @@
-name = input("Please enter your name: ")
+# Car Game
+command = ""
+started = False
+while True:
+    command = input("> ").lower()
+    if command == "start":
+        if started:
+            print("Dude,car is already started.")
+        else:
+            started = True
+            print("Car started! Let's go!")
 
-if len(name) > 10:
-    print("Name cannot exceed 10 characters")
-elif len(name) < 3:
-    print("Name must be at least 3 characters.")
-
-else:
-    print("Hello ", name)
+    elif command == "stop":
+        if not started:
+            print("Car's already stopped!")
+        else:
+            started = False
+            print("Car stopped.")
+    elif command == "help":
+        print("""
+start - starts the car
+stop - stops the car
+quit - exits the game
+        """)
+    elif command == "quit":
+        break
+    else:
+        print("I don't understand that...")
